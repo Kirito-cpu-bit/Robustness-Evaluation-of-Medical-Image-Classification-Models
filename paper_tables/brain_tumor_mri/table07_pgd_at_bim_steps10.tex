@@ -1,0 +1,24 @@
+% Table 7: PGD-AT under BIM attack (steps=10)
+\begin{table}[htbp]
+  \centering
+  \caption{Standard vs.\ PGD-AT accuracy (\%) under BIM attack (steps=10) on Brain MRI.}
+  \label{tab:pgd_at_bim_steps10}
+  \begin{tabular}{llrrrrr}
+    \toprule
+    Model & Variant & $\epsilon=1/255$ & $2/255$ & $3/255$ & $4/255$ & $8/255$ \\
+    \midrule
+    \multirow{2}{*}{ResNet50}
+      & Standard & 82.30 & 52.95 & 44.10 & 42.70 & 42.04 \\
+      & PGD-AT   & 98.16 & 96.31 & 90.49 & 80.24 & 19.54 \\
+    \midrule
+    \multirow{2}{*}{DenseNet121}
+      & Standard & 68.66 & 21.53 &  4.94 &  1.33 &  0.07 \\
+      & PGD-AT   & 98.08 & 96.31 & 89.16 & 77.58 & 16.67 \\
+    \bottomrule
+  \end{tabular}
+  \vspace{0.25em}
+  \begin{minipage}{0.92\linewidth}
+    \footnotesize
+    BIM: no random start, steps=10, $\alpha=\epsilon/\text{steps}$.
+  \end{minipage}
+\end{table}

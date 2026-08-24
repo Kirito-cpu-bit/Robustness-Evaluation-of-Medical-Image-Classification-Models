@@ -1,0 +1,25 @@
+% Table 3: Clean image classification performance (Brain MRI, five models)
+% Requires: \usepackage{booktabs}
+\begin{table}[htbp]
+  \centering
+  \caption{Clean image classification performance on the Brain MRI test set ($n=1356$).}
+  \label{tab:brain_mri_clean_five_models}
+  \begin{tabular}{llrrrrrr}
+    \toprule
+    Task & Model & Accuracy & Precision & Sensitivity & Specificity & F1 & ROC-AUC \\
+    \midrule
+    Brain MRI & ResNet50       & 97.71 & 97.43 & 99.61 & 91.77 & 98.51 & 0.9944 \\
+    Brain MRI & DenseNet121    & 97.57 & 98.35 & 98.44 & 94.82 & 98.40 & 0.9959 \\
+    Brain MRI & ResNet18       & 91.00 & 92.10 & 96.40 & 74.09 & 94.20 & 0.9588 \\
+    Brain MRI & ConvNeXt-Tiny  & 98.30 & 99.61 & 98.15 & 98.78 & 98.87 & 0.9973 \\
+    Brain MRI & MobileNetV2    & 85.77 & 95.93 & 84.82 & 88.72 & 90.04 & 0.9400 \\
+    \bottomrule
+  \end{tabular}
+  \vspace{0.25em}
+  \begin{minipage}{0.92\linewidth}
+    \footnotesize
+    Accuracy, Precision, Sensitivity, Specificity, and F1 are reported in percent (\%).
+    Sensitivity denotes recall (TPR); Specificity denotes TNR.
+    ROC-AUC is reported on the $[0,1]$ scale. Decision threshold: 0.5.
+  \end{minipage}
+\end{table}

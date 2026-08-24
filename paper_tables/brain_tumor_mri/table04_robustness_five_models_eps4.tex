@@ -1,0 +1,23 @@
+% Table 4: Standard-model robustness at epsilon = 4/255 (Brain MRI)
+\begin{table}[htbp]
+  \centering
+  \caption{Adversarial accuracy (\%) of five standard models on Brain MRI at $\epsilon=4/255$.}
+  \label{tab:brain_mri_robustness_eps4}
+  \begin{tabular}{lrrr}
+    \toprule
+    Model & FGSM & PGD (steps=10) & BIM (steps=10) \\
+    \midrule
+    ResNet50        & 53.39 &  7.60 & 42.70 \\
+    DenseNet121     & 22.27 &  3.61 &  1.33 \\
+    ResNet18        & 14.38 &  0.00 &  0.00 \\
+    ConvNeXt-Tiny   &  4.42 &  0.00 &  0.00 \\
+    MobileNetV2     & 15.19 &  4.79 &  4.72 \\
+    \bottomrule
+  \end{tabular}
+  \vspace{0.25em}
+  \begin{minipage}{0.92\linewidth}
+    \footnotesize
+    PGD: random start, $\alpha=\epsilon/\text{steps}$, steps=10.
+    BIM: no random start, $\alpha=\epsilon/\text{steps}$, steps=10.
+  \end{minipage}
+\end{table}

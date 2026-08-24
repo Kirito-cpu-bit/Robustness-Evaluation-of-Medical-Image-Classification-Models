@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Python
 __pycache__/
 *.py[cod]
@@ -47,3 +48,54 @@ thesis/**/*.synctex.gz
 # Temp
 tmp/
 *.tmp
+=======
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+.venv-gpu/
+venv/
+env/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large data and model artefacts (download separately)
+brain_tumor_mri/data/
+chest_xray/data/
+**/outputs/
+**/*.h5
+**/*.hdf5
+
+# Hugging Face / download caches
+**/hf_cache/
+**/hf_chest_xray/
+*.zip
+
+# LaTeX build artefacts
+thesis/**/*.aux
+thesis/**/*.log
+thesis/**/*.out
+thesis/**/*.toc
+thesis/**/*.fls
+thesis/**/*.fdb_latexmk
+thesis/**/*.synctex.gz
+
+# Temp
+tmp/
+*.tmp
+>>>>>>> 5c873d4 (Add full codebase: scripts, thesis, docs, paper tables)

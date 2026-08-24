@@ -1,0 +1,18 @@
+% Table: Brain MRI PGD robustness (five models)
+% Requires: \usepackage{booktabs}
+\begin{table}[htbp]
+  \centering
+  \caption{PGD robustness comparison on Brain MRI ($n=1356$, steps=10). Normalized R-AUC is the mean Adv-AUC retention @ $\epsilon\in\{1,2,4\}/255$.}
+  \label{tab:brain_mri_pgd_robustness_five_models}
+  \begin{tabular}{lrrrrrrrr}
+    \toprule
+    Model & Clean Acc. & Rob.@1/255 & Rob.@2/255 & Rob.@4/255 & Norm R-AUC & ASR@2/255 & Sens.Ret.@2/255 & Rob.F1@2/255 \\
+    \midrule
+    ResNet50 & 97.71 & 86.95 & 61.28 & 7.60 & 0.4782 & 36.43 & 70.02 & 73.20 \\
+    DenseNet121 & 97.57 & 78.76 & 38.94 & 3.61 & 0.4515 & 58.63 & 31.62 & 43.60 \\
+    ResNet18 & 91.00 & 0.52 & 0.07 & 0.00 & 0.0006 & 90.93 & 0.00 & 0.00 \\
+    ConvNeXt-Tiny & 98.30 & 0.22 & 0.00 & 0.00 & 0.0000 & 98.30 & 0.00 & 0.00 \\
+    MobileNetV2 & 85.77 & 30.68 & 13.72 & 4.79 & 0.1980 & 72.05 & 4.01 & 5.65 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

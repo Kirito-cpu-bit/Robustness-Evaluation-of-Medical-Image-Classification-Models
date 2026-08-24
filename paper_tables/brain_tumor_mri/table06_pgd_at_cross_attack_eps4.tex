@@ -1,0 +1,25 @@
+% Table 6: Cross-attack transfer at training budget epsilon = 4/255
+\begin{table}[htbp]
+  \centering
+  \caption{Standard vs.\ PGD-AT accuracy (\%) under three attacks at $\epsilon=4/255$ (Brain MRI).}
+  \label{tab:pgd_at_cross_attack_eps4}
+  \begin{tabular}{llrrr}
+    \toprule
+    Model & Variant & PGD & BIM & FGSM \\
+    \midrule
+    \multirow{2}{*}{ResNet50}
+      & Standard &  7.60 & 42.70 & 53.39 \\
+      & PGD-AT   & 89.38 & 80.24 & 90.71 \\
+    \midrule
+    \multirow{2}{*}{DenseNet121}
+      & Standard &  3.61 &  1.33 & 22.27 \\
+      & PGD-AT   & 88.42 & 77.58 & 89.53 \\
+    \bottomrule
+  \end{tabular}
+  \vspace{0.25em}
+  \begin{minipage}{0.92\linewidth}
+    \footnotesize
+    PGD/BIM evaluation uses steps=10.
+    PGD-AT models were trained with PGD at $\epsilon_{\train}=4/255$.
+  \end{minipage}
+\end{table}

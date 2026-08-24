@@ -1,0 +1,24 @@
+% Table 8: PGD-AT under FGSM attack
+\begin{table}[htbp]
+  \centering
+  \caption{Standard vs.\ PGD-AT accuracy (\%) under FGSM attack on Brain MRI.}
+  \label{tab:pgd_at_fgsm}
+  \begin{tabular}{llrrrrr}
+    \toprule
+    Model & Variant & $\epsilon=1/255$ & $2/255$ & $3/255$ & $4/255$ & $8/255$ \\
+    \midrule
+    \multirow{2}{*}{ResNet50}
+      & Standard & 86.43 & 71.39 & 58.85 & 53.39 & 44.62 \\
+      & PGD-AT   & 98.45 & 97.27 & 94.47 & 90.71 & 66.22 \\
+    \midrule
+    \multirow{2}{*}{DenseNet121}
+      & Standard & 78.61 & 53.83 & 35.40 & 22.27 &  5.01 \\
+      & PGD-AT   & 98.08 & 97.12 & 94.03 & 89.53 & 58.41 \\
+    \bottomrule
+  \end{tabular}
+  \vspace{0.25em}
+  \begin{minipage}{0.92\linewidth}
+    \footnotesize
+    FGSM: single-step $L_\infty$ attack.
+  \end{minipage}
+\end{table}

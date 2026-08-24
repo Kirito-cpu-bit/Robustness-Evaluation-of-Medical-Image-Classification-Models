@@ -1,0 +1,24 @@
+% Table 10: Gaussian smoothing defense (ResNet50, Brain MRI)
+\begin{table}[htbp]
+  \centering
+  \caption{Gaussian smoothing defense on ResNet50 (Brain MRI). Adversarial accuracy (\%) under PGD and BIM with steps=10; blur radius $\sigma=1.0$.}
+  \label{tab:gaussian_defense_resnet50}
+  \begin{tabular}{llrrrrr}
+    \toprule
+    Cond. & Setting & Clean & PGD ($\epsilon$=2/255) & BIM ($\epsilon$=2/255) & PGD ($\epsilon$=4/255) & BIM ($\epsilon$=4/255) \\
+    \midrule
+    D0 & No defense & 97.71 & 61.21 & 52.95 &  7.52 & 42.70 \\
+    D1 & Adv-only Gaussian & 97.71 & 79.13 & 79.35 & 50.59 & 58.63 \\
+    D2 & All-input Gaussian & 93.95 & 79.13 & 79.35 & 50.59 & 58.63 \\
+    D3 & PGD-AT + all-input Gaussian & 98.53 & 97.64 & 97.49 & 96.53 & 96.09 \\
+    \bottomrule
+  \end{tabular}
+  \vspace{0.25em}
+  \begin{minipage}{0.92\linewidth}
+    \footnotesize
+    D0: no preprocessing. D1: Gaussian blur on adversarial inputs only.
+    D2: blur on all inputs (Standard ResNet50).
+    D3: blur on all inputs with PGD-AT ResNet50 (trained at $\epsilon_{\train}=4/255$, steps=10).
+    PGD uses random start; BIM has no random start; $\alpha=\epsilon/\text{steps}$.
+  \end{minipage}
+\end{table}
